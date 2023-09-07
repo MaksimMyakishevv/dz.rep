@@ -1,18 +1,14 @@
-n = int(input())
-mas =[]
-mas_bad=[]
-a = 0
-for i in range(n):
-    x = int(input())
-    mas.append(x)
-for i in range(n-1):
-    if mas[a+1]-mas[a] != 1:
-        mas_bad.append(a+1)
-    a+=1
+n = input().split()
+mas = [int(x) for x in n]
+mas_bad = []
+
+for i in range(1, len(mas)):
+    if mas[i] - mas[i-1] != 1:
+        mas_bad.append(i)
+
 if not mas_bad:
     print("Ничего не найдено")
 else:
-    print(mas_bad)
-
+    print("Разрывы обнаружены на индексах:", mas_bad)
 
 
